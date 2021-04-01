@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-export class AuthCTDetail extends Component {
+export class Home extends Component {
     render() {
         return (
             <div>
-                Auth detail path
+                Home path
             </div>
         )
     }
 }
 
-export default AuthCTDetail
+export default Home;
