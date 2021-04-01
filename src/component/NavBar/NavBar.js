@@ -18,11 +18,11 @@ function NavBar() {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                    <a class="nav-link" href="#">Sign Up</a>
+                    <li class="nav-item" activeClassName="active-class-style">
+                        <a class="nav-link" href="/sign-up">Sign Up</a>
                     </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
+                    <li class="nav-item" activeClassName="active-class-style">
+                        <a class="nav-link" href="/login">Login</a>
                     </li>
                 </ul>
                 {/* <form class="form-inline mt-2 mt-md-0">
