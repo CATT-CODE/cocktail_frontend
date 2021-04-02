@@ -2,12 +2,21 @@ import React, { Component } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import jwtDecode from "jwt-decode";
+import { checkIsUserLoggedIn } from "../lib/helpers";
 
 export class Login extends Component {
   state = {
     email: "",
     password: "",
   };
+
+  componentDidMount() {
+    if (checkIsUserLoggedIn()) {
+      this.props.history.push("/home");
+    } else {
+      this.props.history.push("/login");
+    }
+  }
 
   handleOnChange = (event) => {
     this.setState({

@@ -3,6 +3,7 @@ import "./SignUp.css";
 import { debounce } from "lodash";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { checkIsUserLoggedIn } from "../lib/helpers"
 
 export class SignUp extends Component {
   constructor(props) {
@@ -16,9 +17,13 @@ export class SignUp extends Component {
     };
   }
 
-  // componentDidMount() {
-
-  // }
+  componentDidMount() {
+    if (checkIsUserLoggedIn()) {
+        this.props.history.push("/home");
+    } else {
+        this.props.history.push("/sign-up");
+    }
+  }
 
   handleOnChange = (event) => {
     this.setState({
