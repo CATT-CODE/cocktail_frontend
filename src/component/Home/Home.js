@@ -1,6 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import axios from 'axios';
-import { checkIsUserLoggedIn } from "../lib/helpers"
+import { checkIsUserLoggedIn } from "../lib/helpers";
+import "./Home.css";
+import randomImg from "../../images/random.png";
+import nameImg from "../../images/name.jpg";
+import ingredientsImg from "../../images/ingredients.jpg";
 
 export class Home extends Component {
     constructor(props) {
@@ -27,9 +31,8 @@ export class Home extends Component {
                     isLoading: false,
                     ctName: ctData.data.drinks[0].strDrink,
                     ctDescription: ctData.data.drinks[0].strCategory,
-                    ctData: ctData.data.drinks[0].idDrink,
+                    ctID: Number(ctData.data.drinks[0].idDrink),
                 });
-                console.log(this.state.ctArray);
             } catch (e) {
                 console.log(e);
             }
@@ -60,7 +63,7 @@ export class Home extends Component {
           <div class="carousel-caption text-start">
             <h1>Try Something New</h1>
             <p>Drink Description</p>
-            <p><a class="btn btn-lg btn-light" href="/sign-up">Sign up to view recipes</a></p>
+            <p><a class="btn btn-lg btn-light" href="/sign-up">Sign Up To View Recipes</a></p>
           </div>
         </div>
         )}
@@ -71,21 +74,20 @@ export class Home extends Component {
   <div class="container marketing">
 <div class="row">
   <div class="col-lg-4">
-    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+  <img src={nameImg} alt="something" className="bd-placeholder-img rounded-circle" width="225" height="225"/>
 
     <h2>Search By Drink Name</h2>
     <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
     <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
   </div>
   <div class="col-lg-4">
-    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="https://www.thecocktaildb.com/images/media/drink/metwgh1606770327.jpg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
+    <img src={ingredientsImg} alt="something" className="bd-placeholder-img rounded-circle" width="225" height="225"/>
     <h2>Search By Ingredient</h2>
     <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
     <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
   </div>
   <div class="col-lg-4">
-    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+  <img src={randomImg} alt="something" className="bd-placeholder-img rounded-circle" width="225" height="225"/>
 
     <h2>Random Selection</h2>
     <p>And lastly this, the third column of representative placeholder content.</p>
