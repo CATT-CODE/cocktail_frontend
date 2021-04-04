@@ -6,6 +6,7 @@ export class AuthCTDetail extends Component {
     
     state = {
         ingredientsArray: [],
+        measurementsArray: [],
         ctInstructions: "",
         ctCategory: "",
         ctData: []
@@ -15,14 +16,30 @@ export class AuthCTDetail extends Component {
         try {
             let payload = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.props.match.params.id}`);
             this.setState({
-                ctData: payload.data.drinks[0]
+                ctData: payload.data.drinks[0],
             })
-            console.log(this.state.ctData);
+            let rawIngredients = Object.values(this.state.ctData);
+            let rawIngredients2 = rawIngredients.slice(17, 32);
+            let finalIngredients = rawIngredients2.map(item => !item === null);
+            let rawMeasurements = Object.values(this.state.ctData);
+            let rawMeasurements2 = rawMeasurements.slice(32, 47);
+            let finalMeasurements = rawMeasurements2.map(item => !item === null);
+            this.setState({
+                ingredientsArray: rawIngredients2,
+                measurementsArray: rawMeasurements2,
+                ctInstructions: this.state.ctData.strInstructions,
+                ctCategory: this.state.ctData.strCategory,
+            })
+            console.log(this.state);
             // console.log(this.state.ctData.slice(17, 32))
             // console.log(this.state.ctData.slice(32, 47))
         } catch (e) {
             console.log(e);
         }
+    }
+
+    showIngredientList = () => {
+        
     }
 
     render() {

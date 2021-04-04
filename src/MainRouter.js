@@ -23,7 +23,7 @@ const MainRouter = (props) => {
                     <PrivateRoute exact path="/recipe-detail/:id" component={AuthCTDetail} />
                     <Route exact path="/login" render={(routerProps) => <Login {...routerProps} handleUserLogin={props.handleUserLogin} />} />
                     <Route exact path="/sign-up" component={SignUp} />
-                    <Route exact path="/home" component={Home} />
+                    <Route exact path="/" component={Home} />
                 </Switch>
         </Router>
     )

@@ -15,6 +15,7 @@ export class Home extends Component {
             ctName: "",
             ctDescription: "",
             ctID: "",
+            ctImg: ""
         };
     }
     
@@ -32,6 +33,7 @@ export class Home extends Component {
                     ctName: ctData.data.drinks[0].strDrink,
                     ctDescription: ctData.data.drinks[0].strCategory,
                     ctID: Number(ctData.data.drinks[0].idDrink),
+                    ctImg: ctData.data.drinks[0].strDrinkThumb,
                 });
             } catch (e) {
                 console.log(e);
@@ -42,60 +44,48 @@ export class Home extends Component {
         return (
             <main>
                 <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-    {/* <div class="carousel-indicators">
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div> */}
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-        {checkIsUserLoggedIn() ? (
-            <div class="container">
-            <div class="carousel-caption text-start">
-              <h1>{this.state.ctName}</h1>
-              <p>{this.state.ctDescription}</p>
-              <p><a class="btn btn-lg btn-light" href={`/recipe-detail/${this.state.ctID}`}>View The Recipe</a></p>
-            </div>
-          </div>
-        ) : (
-        <div class="container">
-          <div class="carousel-caption text-start">
-            <h1>Try Something New</h1>
-            <p>Drink Description</p>
-            <p><a class="btn btn-lg btn-light" href="/sign-up">Sign Up To View Recipes</a></p>
-          </div>
-        </div>
-        )}
-      </div>
-      </div>
-    </div>
-    
-  <div class="container marketing">
-<div class="row">
-  <div class="col-lg-4">
-  <img src={nameImg} alt="something" className="bd-placeholder-img rounded-circle" width="225" height="225"/>
-
-    <h2>Search By Drink Name</h2>
-    <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-  </div>
-  <div class="col-lg-4">
-    <img src={ingredientsImg} alt="something" className="bd-placeholder-img rounded-circle" width="225" height="225"/>
-    <h2>Search By Ingredient</h2>
-    <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-  </div>
-  <div class="col-lg-4">
-  <img src={randomImg} alt="something" className="bd-placeholder-img rounded-circle" width="225" height="225"/>
-
-    <h2>Random Selection</h2>
-    <p>And lastly this, the third column of representative placeholder content.</p>
-    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-  </div> 
-  </div>
-  </div>
-
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img src={this.state.ctImg} alt="something" className="rounded-circle" width="10" height="10"/>
+                {checkIsUserLoggedIn() ? (
+                <div class="container">
+                <div class="carousel-caption text-start">
+                    <h1>{this.state.ctName}</h1>
+                    <p>{this.state.ctDescription}</p>
+                    <p><a class="btn btn-lg btn-light" href={`/recipe-detail/${this.state.ctID}`}>View The Recipe</a></p>
+                </div>
+                </div>
+            ) : (
+                <div class="container">
+                <div class="carousel-caption text-start">
+                    <h1>{this.state.ctName}</h1>
+                    <p>{this.state.ctDescription}</p>
+                    <p><a class="btn btn-lg btn-light" href="/sign-up">Sign Up To View Recipes</a></p>
+                </div>
+                </div>
+            )}
+                </div>
+                </div>
+                </div>
+                <div class="container marketing">
+                <div class="row">
+                <div class="col-lg-4">
+                    <img src={nameImg} alt="something" className="bd-placeholder-img rounded-circle" width="225" height="225"/>
+                    <h2>Search By Drink Name</h2>
+                    <p><a class="btn btn-secondary" href="/search-drink-name">View details &raquo;</a></p>
+                </div>
+                <div class="col-lg-4">
+                    <img src={ingredientsImg} alt="something" className="bd-placeholder-img rounded-circle" width="225" height="225"/>
+                    <h2>Search By Ingredient</h2>
+                    <p><a class="btn btn-secondary" href="/search-ingredient">View details &raquo;</a></p>
+                </div>
+                <div class="col-lg-4">
+                    <img src={randomImg} alt="something" href="/random-selection" className="bd-placeholder-img rounded-circle" width="225" height="225"/>
+                    <h2>Random Selection</h2>
+                    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+                </div> 
+                </div>
+                </div>
             </main>
         )
     }

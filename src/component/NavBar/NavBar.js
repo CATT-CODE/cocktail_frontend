@@ -8,7 +8,7 @@ function NavBar(props) {
       <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
           <p className="h5 my-0 me-md-3 fw-normal" style={{ marginLeft: 10 }}>
-            <Link to="/home">
+            <Link to="/">
               <i class="fas fa-cocktail"></i>
             </Link>
           </p>

@@ -12,7 +12,7 @@ export class Login extends Component {
 
   componentDidMount() {
     if (checkIsUserLoggedIn()) {
-      this.props.history.push("/home");
+      this.props.history.push("/");
     } else {
       this.props.history.push("/login");
     }
