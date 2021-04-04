@@ -8,9 +8,12 @@ export class Home extends Component {
         this.state = {
             ctArray: [],
             isLoading: false,
+            ctName: "",
+            ctDescription: "",
+            ctID: "",
         };
     }
-
+    
     async componentDidMount() {
         this.setState({
             isLoading: true,
@@ -18,16 +21,19 @@ export class Home extends Component {
         try {
             let ctData = await axios.get(
                 `https://www.thecocktaildb.com/api/json/v1/1/random.php`,
-            );
-        this.setState({
-            ctArray: ctData.data.drinks[0],
-            isLoading: false,
-        });
-        console.log(ctData.data.drinks[0]);
-        } catch (e) {
-            console.log(e);
+                );
+                this.setState({
+                    ctArray: ctData.data.drinks[0],
+                    isLoading: false,
+                    ctName: ctData.data.drinks[0].strDrink,
+                    ctDescription: ctData.data.drinks[0].strCategory,
+                    ctData: ctData.data.drinks[0].idDrink,
+                });
+                console.log(this.state.ctArray);
+            } catch (e) {
+                console.log(e);
+            }
         }
-    }
     
     render() {
         return (
@@ -44,81 +50,44 @@ export class Home extends Component {
         {checkIsUserLoggedIn() ? (
             <div class="container">
             <div class="carousel-caption text-start">
-            <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 p-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div class="bg-dark shadow-sm mx-auto" style={{width: "80", height: 300}></div>
-</div>
-              <h1>Try Something New</h1>
-              <p>Drink Description</p>
-              <p><a class="btn btn-lg btn-light" href="/recipe-detail">View The Recipe</a></p>
+              <h1>{this.state.ctName}</h1>
+              <p>{this.state.ctDescription}</p>
+              <p><a class="btn btn-lg btn-light" href={`/recipe-detail/${this.state.ctID}`}>View The Recipe</a></p>
             </div>
           </div>
-        ): (
+        ) : (
         <div class="container">
           <div class="carousel-caption text-start">
             <h1>Try Something New</h1>
             <p>Drink Description</p>
-            <p><a class="btn btn-lg btn-light" href="/login">Sign up to view recipes</a></p>
+            <p><a class="btn btn-lg btn-light" href="/sign-up">Sign up to view recipes</a></p>
           </div>
         </div>
         )}
       </div>
-      {/* <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Some representative placeholder content for the second slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-
-        <div class="container">
-          <div class="carousel-caption text-end">
-            <h1>One more for good measure.</h1>
-            <p>Some representative placeholder content for the third slide of this carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-          </div>
-        </div> */}
       </div>
     </div>
-    {/* <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button> */}
+    
   <div class="container marketing">
-
-
 <div class="row">
   <div class="col-lg-4">
     <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
 
-    <h2>Heading</h2>
+    <h2>Search By Drink Name</h2>
     <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
     <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
   </div>
   <div class="col-lg-4">
-    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="https://www.thecocktaildb.com/images/media/drink/metwgh1606770327.jpg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
 
-    <h2>Heading</h2>
+    <h2>Search By Ingredient</h2>
     <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
     <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
   </div>
   <div class="col-lg-4">
     <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
 
-    <h2>Heading</h2>
+    <h2>Random Selection</h2>
     <p>And lastly this, the third column of representative placeholder content.</p>
     <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
   </div> 
