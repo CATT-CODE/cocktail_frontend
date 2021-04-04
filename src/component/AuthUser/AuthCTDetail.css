@@ -3,7 +3,7 @@
 /* Padding below the footer and lighter body text */
 
 body {
-    padding-top: 0rem;
+    padding-top: 1rem;
     padding-bottom: 0rem;
     color: #5a5a5a;
   }
@@ -59,7 +59,7 @@ body {
   
   .featurette-divider {
     margin: 5rem 0; /* Space out the Bootstrap <hr> more */
-    margin-left: 3rem
+    margin-left: 12rem;
 
   }
   
@@ -90,6 +90,6 @@ body {
   
   @media (min-width: 62em) {
     .featurette-heading {
-      margin-top: 7rem;
+      margin-top: 12rem;
     }
   }

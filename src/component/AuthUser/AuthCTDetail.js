@@ -9,7 +9,8 @@ export class AuthCTDetail extends Component {
         measurementsArray: [],
         ctInstructions: "",
         ctCategory: "",
-        ctData: []
+        ctData: [],
+        ctDName: "",
     }
 
     componentDidMount = async () => {
@@ -20,15 +21,16 @@ export class AuthCTDetail extends Component {
             })
             let rawIngredients = Object.values(this.state.ctData);
             let rawIngredients2 = rawIngredients.slice(17, 32);
-            let finalIngredients = rawIngredients2.map(item => !item === null);
+            let finalIngredients = rawIngredients2.filter(item => item !== null);
             let rawMeasurements = Object.values(this.state.ctData);
             let rawMeasurements2 = rawMeasurements.slice(32, 47);
-            let finalMeasurements = rawMeasurements2.map(item => !item === null);
+            let finalMeasurements = rawMeasurements2.filter(item => item !== null);
             this.setState({
-                ingredientsArray: rawIngredients2,
-                measurementsArray: rawMeasurements2,
+                ingredientsArray: finalIngredients,
+                measurementsArray: finalMeasurements,
                 ctInstructions: this.state.ctData.strInstructions,
                 ctCategory: this.state.ctData.strCategory,
+                ctName: this.state.ctData.strDrink
             })
             console.log(this.state);
             // console.log(this.state.ctData.slice(17, 32))
@@ -46,14 +48,32 @@ export class AuthCTDetail extends Component {
         return (
 <body class="featurette-divider">
     <div class="row featurette">
+      
       <div class="col-md-7">
-        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-        <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+        <h2 class="featurette-heading">{this.state.ctName} <span class="text-muted">Recipe</span></h2>
+        <p class="lead">{this.state.ctCategory}</p>
+        <br/>
+            <table class="table table-sm">
+                    <thead>
+                        <tr>
+                        <th scope="col">Ingredients</th>
+                        <th scope="col">Measurements</th>
+                        </tr>
+                    </thead>
+                <tbody>
+                    <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    </tr>
+                </tbody>
+            </table>
       </div>
+      
       <div class="col-md-5">
         <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
 
       </div>
+    
     </div>
     </body>
         )

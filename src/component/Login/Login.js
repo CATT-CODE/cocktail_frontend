@@ -38,7 +38,7 @@ export class Login extends Component {
 
       this.props.handleUserLogin(decodedJWToken);
 
-      this.props.history.push("/home");
+      this.props.history.push("/");
     } catch (e) {
       console.log(e.message);
       toast.error(e.message, {
