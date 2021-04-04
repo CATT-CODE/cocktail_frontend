@@ -24,7 +24,7 @@ function NavBar(props) {
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/login">
+                  <a class="nav-link" href="/login" onClick={props.handleUserLogout}>
                     Logout
                   </a>
                 </li>

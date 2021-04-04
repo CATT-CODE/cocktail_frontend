@@ -78,8 +78,7 @@ export class Login extends Component {
               Password
             </label>
             <input
-              //type="password"
-              type="text"
+              type="password"
               id="inputPassword"
               className="form-control"
               placeholder="Password"

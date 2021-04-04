@@ -9,7 +9,7 @@ import Login from './component/Login/Login';
 const MainRouter = (props) => {
     return (
         <Router user={props.user}>
-            <NavBar user={props.user}/>
+            <NavBar user={props.user} handleUserLogout={props.handleUserLogout}/>
                 <Switch >
                     <Route exact path="/login" render={(routerProps) => <Login {...routerProps} handleUserLogin={props.handleUserLogin} />} />
                     <Route exact path="/sign-up" component={SignUp} />
