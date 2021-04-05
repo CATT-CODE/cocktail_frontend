@@ -3,6 +3,7 @@ import "./SignUp.css";
 import { debounce } from "lodash";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 import { checkIsUserLoggedIn } from "../lib/helpers"
 
 export class SignUp extends Component {
@@ -160,6 +161,9 @@ export class SignUp extends Component {
             <button class="w-100 btn btn-lg btn-primary" type="submit">
               Sign Up
             </button>
+            <br/>
+            <br/>
+          <Link className="p-2" to="/login">Need to Login?</Link>
           </form>
         </main>
       </body>

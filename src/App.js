@@ -15,7 +15,6 @@ export default class App extends Component {
     console.log(getJwtToken);
     if (getJwtToken) {
       const currentTime = Date.now()/1000;
-
       let decodedJwtToken = jwtDecode(getJwtToken);
       console.log(decodedJwtToken);
       if (decodedJwtToken.exp < currentTime) {

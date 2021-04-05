@@ -46,7 +46,7 @@ export class Home extends Component {
                 <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img src={this.state.ctImg} alt="something" className="rounded-circle" width="10" height="10"/>
+                <img src={this.state.ctImg} alt="something" className="rounded-circle" width="10" height="10"/> <p><img src="image/example.jpg" alt="Example1" width="193" height="130"> (width:193px, height:130px)</p>
                 {checkIsUserLoggedIn() ? (
                 <div class="container">
                 <div class="carousel-caption text-start">
@@ -82,7 +82,7 @@ export class Home extends Component {
                 <div class="col-lg-4">
                     <img src={randomImg} alt="something" href="/random-selection" className="bd-placeholder-img rounded-circle" width="225" height="225"/>
                     <h2>Random Selection</h2>
-                    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+                    <p><a class="btn btn-secondary" href="/random-selection">View details &raquo;</a></p>
                 </div> 
                 </div>
                 </div>

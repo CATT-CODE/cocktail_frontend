@@ -3,7 +3,7 @@
 /* Padding below the footer and lighter body text */
 
 body {
-    padding-top: 1rem;
+    padding-top: 2rem;
     padding-bottom: 0rem;
     color: #5a5a5a;
   }
@@ -90,6 +90,6 @@ body {
   
   @media (min-width: 62em) {
     .featurette-heading {
-      margin-top: 12rem;
+      margin-top: 2rem;
     }
   }

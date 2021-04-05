@@ -17,6 +17,11 @@
     left: 0;
     min-width: 100%;
     height: 32rem;
+    
+}
+.carousel-item .col-md-5 svg {
+    margin-right: .75rem;
+    margin-left: 10rem;
 }
 
 .marketing .col-lg-4 {
