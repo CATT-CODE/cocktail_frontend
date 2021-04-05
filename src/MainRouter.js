@@ -8,8 +8,8 @@ import Login from './component/Login/Login';
 import AuthCTDetail from './component/AuthUser/AuthCTDetail';
 import PrivateRoute from './component/PrivateRoute/PrivateRoute';
 import SearchIngredient from './component/AuthUser/SearchIngredient';
-import RandomSelection from './component/AuthUser/SearchIngredient';
-import SearchDrinkName from './component/AuthUser/SearchIngredient';
+import RandomSelection from './component/AuthUser/RandomSelection';
+import SearchDrinkName from './component/AuthUser/SearchDrinkName';
 
 
 const MainRouter = (props) => {

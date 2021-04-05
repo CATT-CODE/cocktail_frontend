@@ -91,6 +91,8 @@ export class Login extends Component {
             <button className="w-100 btn btn-lg btn-primary" type="submit">
               Login
             </button>
+            <br/>
+            <br/>
             <Link className="p-2" to="/sign-up">Need to Sign Up?</Link>
 
           </form>
