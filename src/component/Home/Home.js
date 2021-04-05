@@ -48,14 +48,14 @@ export class Home extends Component {
                 <div class="carousel-item active">
                 {/* <img className="thumbnail" id="ctMainImg" src={this.state.ctImg} alt="something"/>  */}
                 <div>
-                <img src={this.state.ctImg} alt="LAME" style={{width:400, marginLeft: 1200, marginTop: 55}}/> 
+                <img src={this.state.ctImg} alt="LAME" style={{width:400, marginLeft: 1215, marginTop: 55}}/> 
                 </div>
                 {checkIsUserLoggedIn() ? (
                 <div class="container">
                 <div class="carousel-caption text-start">
                     <h1>{this.state.ctName}</h1>
                     <p>{this.state.ctDescription}</p>
-                    <p><a class="btn btn-lg btn-light" href={`/recipe-detail/${this.state.ctID}`}>View The Recipe</a></p>
+                    <p><a class="btn btn-lg btn-light" href={`/recipe-detail/${this.state.ctID}`} >View The Recipe</a></p>
                 </div>
                 </div>
             ) : (
@@ -63,7 +63,7 @@ export class Home extends Component {
                 <div class="carousel-caption text-start">
                     <h1>{this.state.ctName}</h1>
                     <p>{this.state.ctDescription}</p>
-                    <p><a class="btn btn-lg btn-light" href="/sign-up">Sign Up To View Recipes</a></p>
+                    <p><a class="btn btn-lg btn-light" href="/sign-up" >Sign Up To View Recipes</a></p>
                 </div>
                 </div>
             )}
@@ -73,18 +73,18 @@ export class Home extends Component {
                 <div class="container marketing">
                 <div class="row">
                 <div class="col-lg-4">
-                    <img src={nameImg} alt="something" className="bd-placeholder-img rounded-circle" width="225" height="225"/>
-                    <h2>Search By Drink Name</h2>
-                    <p><a class="btn btn-secondary" href="/search-drink-name">View details &raquo;</a></p>
+                    <img src={nameImg} alt="something" className="bd-placeholder-img rounded-circle" width="225" height="225" style={{marginBottom: 15}}/>
+                    <h2 style={{marginBottom: 15}}>Search By Drink Name</h2>
+                    <p><a class="btn btn-secondary" href="/search-drink-name" >View details &raquo;</a></p>
                 </div>
                 <div class="col-lg-4">
-                    <img src={ingredientsImg} alt="something" className="bd-placeholder-img rounded-circle" width="225" height="225"/>
-                    <h2>Search By Ingredient</h2>
-                    <p><a class="btn btn-secondary" href="/search-ingredient">View details &raquo;</a></p>
+                    <img src={ingredientsImg} alt="something" className="bd-placeholder-img rounded-circle" width="225" height="225" style={{marginBottom: 15}}/>
+                    <h2 style={{marginBottom: 15}}>Search By Ingredient</h2>
+                    <p><a class="btn btn-secondary" href="/search-ingredient" style={{marginBottom: 15}}>View details &raquo;</a></p>
                 </div>
                 <div class="col-lg-4">
-                    <img src={randomImg} alt="something" href="/random-selection" className="bd-placeholder-img rounded-circle" width="225" height="225"/>
-                    <h2>Random Selection</h2>
+                    <img src={randomImg} alt="something" href="/random-selection" className="bd-placeholder-img rounded-circle" width="225" height="225" style={{marginBottom: 15}}/>
+                    <h2 style={{marginBottom: 15}}>Random Selection</h2>
                     <p><a class="btn btn-secondary" href="/random-selection">View details &raquo;</a></p>
                 </div> 
                 </div>

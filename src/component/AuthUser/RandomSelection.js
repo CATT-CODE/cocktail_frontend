@@ -41,11 +41,24 @@ export class RandomSelection extends Component {
             console.log(e);
         }
     }
+    showResultsArray = () => {
+        return this.state.randomResults.map((item) => {
+            return (
+                <div class="col-lg-4" key={item.idDrink}>
+                    <img src={item.strDrinkThumb} alt="something" className="bd-placeholder-img rounded-circle" width="225" height="225" style={{marginBottom: 15}} />
+                    <h2 style={{marginBottom: 15}}>{item.strDrink}</h2>
+                    <p><a class="btn btn-secondary" href={`/recipe-detail/${item.idDrink}`}>View Recipe &raquo;</a></p>
+                </div>
+            )
+        })
+    }
 
     render() {
         return (
-            <div>
-                
+            <div class="container marketing">
+                <div class="row">
+            {this.showResultsArray()}
+            </div>    
             </div>
         )
     }
