@@ -46,7 +46,10 @@ export class Home extends Component {
                 <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img src={this.state.ctImg} alt="something" className="rounded-circle" width="10" height="10"/> <p><img src="image/example.jpg" alt="Example1" width="193" height="130"> (width:193px, height:130px)</p>
+                {/* <img className="thumbnail" id="ctMainImg" src={this.state.ctImg} alt="something"/>  */}
+                <div>
+                <img class="w3-hover-sepia" src={this.state.ctImg} alt="LAME" style={{width:400, marginLeft: 1200, marginTop: 55}}/> 
+                </div>
                 {checkIsUserLoggedIn() ? (
                 <div class="container">
                 <div class="carousel-caption text-start">

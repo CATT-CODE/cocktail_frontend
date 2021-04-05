@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./SignUp.css";
-import { debounce } from "lodash";
+//import { debounce } from "lodash";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
