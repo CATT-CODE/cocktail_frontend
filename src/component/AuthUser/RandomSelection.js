@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { checkIsUserLoggedIn } from "../lib/helpers";
 
 export class RandomSelection extends Component {
     state = {
@@ -46,7 +45,7 @@ export class RandomSelection extends Component {
             return (
                 <div class="col-lg-4" key={item.idDrink}>
                     <img src={item.strDrinkThumb} alt="something" className="bd-placeholder-img rounded-circle" width="225" height="225" style={{marginBottom: 15}} />
-                    <h2 style={{marginBottom: 15}}>{item.strDrink}</h2>
+                    <h2 style={{marginBottom: 15}} class="text-light">{item.strDrink}</h2>
                     <p><a class="btn btn-secondary" href={`/recipe-detail/${item.idDrink}`}>View Recipe &raquo;</a></p>
                 </div>
             )
@@ -56,6 +55,7 @@ export class RandomSelection extends Component {
     render() {
         return (
             <div class="container marketing">
+                <h2 style={{marginBottom: 20, marginTop:20, textAlign: "center"}} class="text-light">Random Cocktails To Try</h2>
                 <div class="row">
             {this.showResultsArray()}
             </div>    

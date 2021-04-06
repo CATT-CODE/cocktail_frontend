@@ -66,12 +66,12 @@ export class AuthCTDetail extends Component {
         return (
             <body class="featurette-divider">
                 <div class="row featurette">
-                    <div class="col-md-7">
-                    <h2 class="featurette-heading">{this.state.ctName} <span class="text-muted">Recipe</span></h2>
+                    <div class="col-md-7 text-light">
+                    <h2 class="featurette-heading text-light">{this.state.ctName} <span class="text-muted">Recipe</span></h2>
                         <p/>
-                    <p class="lead">{this.state.ctCategory}</p>
-                    <p class="lead">Glass Type - {this.state.ctGlass}</p>
-                        <table class="table table-sm">
+                    <p class="lead text-light">{this.state.ctCategory}</p>
+                    <p class="lead text-light">Glass Type - {this.state.ctGlass}</p>
+                        <table class="table table-sm text-light">
                             <thead>
                                 <tr>
                                 <th scope="col">Ingredients</th>
@@ -90,7 +90,7 @@ export class AuthCTDetail extends Component {
                     </div>
 
                 <div class="col-md-5">
-                <img src={this.state.ctImg} alt="LAME" style={{height: 500, width:500, marginLeft: 10}}/>
+                <img src={this.state.ctImg} alt="LAME" style={{height: 500, width:500, marginLeft: 10, boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"}}/>
                 </div>
                 
                 </div>

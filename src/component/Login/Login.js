@@ -57,10 +57,15 @@ export class Login extends Component {
   render() {
     const { email, password } = this.state;
     return (
-      <div className="form-body">
+      <div className="form-body " style={{ textAlign: "center"}}>
         <main className="form-signin">
           <form onSubmit={this.handleLoginSubmit}>
-            <h1 className="h3 mb-3 fw-normal">Please Login</h1>
+            <h1
+              className="h3 mb-3 fw-normal text-light"
+              style={{ textAlign: "left" }}
+            >
+              Please Login
+            </h1>
             <label htmlFor="inputEmail" className="visually-hidden">
               Email Address
             </label>
@@ -75,7 +80,10 @@ export class Login extends Component {
               value={email}
               onChange={this.handleOnChange}
             />
-            <label htmlFor="inputPassword" className="visually-hidden">
+            <label
+              htmlFor="inputPassword"
+              className="visually-hidden"
+            >
               Password
             </label>
             <input
@@ -88,13 +96,14 @@ export class Login extends Component {
               value={password}
               onChange={this.handleOnChange}
             />
-            <button className="w-100 btn btn-lg btn-primary" type="submit">
-              Login
+            <button className="w-100 btn btn-lg btn-secondary" type="submit">
+              Login &raquo;
             </button>
-            <br/>
-            <br/>
-            <Link className="p-2" to="/sign-up">Need to Sign Up?</Link>
-
+            <br />
+            <br />
+            <Link className="p-2" to="/sign-up" style={{ textAlign: "center" }}>
+              Need to sign up?
+            </Link>
           </form>
         </main>
       </div>

@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./NavBar.css";
+// import "./NavBar.css";
 
 function NavBar(props) {
   return (
     <body>
       <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-          <p className="h5 my-0 me-md-3 fw-normal" style={{ marginLeft: 10 }}>
+          <p className="h5 my-0 me-md-3 fw-normal" style={{ marginLeft: 22 }}>
             <Link to="/">
               <i class="fas fa-cocktail"></i>
             </Link>
