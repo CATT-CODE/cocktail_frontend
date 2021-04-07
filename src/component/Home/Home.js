@@ -94,14 +94,14 @@ export class Home extends Component {
                     className="bd-placeholder-img rounded-circle"
                     width="225"
                     height="225"
-                    style={{ marginBottom: 15 }}
+                    style={{ marginBottom: 15, boxShadow: "0 4px 50px 50px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" }}
                 />
                 <h2 style={{ marginBottom: 15 }} class="text-light">
                     Search By Drink Name
                 </h2>
                 <p>
                     <a class="btn btn-secondary" href="/search-drink-name">
-                    View details &raquo;
+                    Go &raquo;
                     </a>
                 </p>
                 </div>
@@ -112,7 +112,7 @@ export class Home extends Component {
                     className="bd-placeholder-img rounded-circle"
                     width="225"
                     height="225"
-                    style={{ marginBottom: 15 }}
+                    style={{ marginBottom: 15, boxShadow: "0 4px 50px 50px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" }}
                 />
                 <h2 style={{ marginBottom: 15 }} class="text-light">
                     Search By Ingredient
@@ -123,7 +123,7 @@ export class Home extends Component {
                     href="/search-ingredient"
                     style={{ marginBottom: 15 }}
                     >
-                    View details &raquo;
+                    Go &raquo;
                     </a>
                 </p>
                 </div>
@@ -135,14 +135,14 @@ export class Home extends Component {
                     className="bd-placeholder-img rounded-circle"
                     width="225"
                     height="225"
-                    style={{ marginBottom: 15 }}
+                    style={{ marginBottom: 15, boxShadow: "0 4px 50px 50px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" }}
                 />
                 <h2 style={{ marginBottom: 15 }} class="text-light">
                     Random Selection
                 </h2>
                 <p>
                     <a class="btn btn-secondary" href="/random-selection">
-                    View details &raquo;
+                    Go &raquo;
                     </a>
                 </p>
                 </div>

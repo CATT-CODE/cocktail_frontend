@@ -17,9 +17,9 @@ function NavBar(props) {
                 </button> */}
           <div class="collapse navbar-collapse" id="navbarCollapse">
             {props.user ? (
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="/profile">
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="/favorites" style={{textDecoration: 'underline'}}>
                     {props.user.email}
                   </a>
                 </li>
@@ -28,6 +28,11 @@ function NavBar(props) {
                     Logout
                   </a>
                 </li>
+                <nav class="nav" style={{marginLeft: 1450}} >
+                  <li><a class="nav-link" href="/search-drink-name">Drink Name</a></li>
+                  <li><a class="nav-link" href="/search-ingredient">Ingredient</a></li>
+                  <li><a class="nav-link" href="/random-selection">Random</a></li>
+                </nav>
               </ul>
             ) : (
               <ul class="navbar-nav mr-auto">
